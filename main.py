@@ -4,7 +4,6 @@ import requests
 import json
 import random
 from keep_alive import keep_alive
-os.system("pip install discord")
 client = discord.Client()
 
 sad = [
@@ -13,11 +12,11 @@ sad = [
 ]
 
 artifacts_bad = [
-    "trash artifacts", "shit artifacts", "bad stats", "Fuck RNG", "stupid",
+    "trash artifacts", "shit artifacts", "bad stats", "Fuck RNG",
     "Fuck rng"
 ]
 
-artifacts_good = ["Noice", "Not bad!","Awesome", "Great"]
+artifacts_good = ["Noice"]
 
 insult_bot = [
     "Fuck you bot", "Fuck off bot", "I hate this bot", "Fuck this bot"
@@ -39,8 +38,7 @@ encourage_art = [
 ]
 
 good_art = [
-    "That's great", "Congratulations", "Keep it up", "GG", "Good for you !"
-]
+    "That's great", "Congratulations", "Keep it up", "GG", "Good for you !", "Toit"]
 
 retort = [
     "Bitch please", "Fuck You M8", "Don't get sassy, my creator's a badass",
@@ -71,6 +69,10 @@ async def on_message(message):
     await message.channel.send(file=discord.File('daily.png'))
   if msg.lower().startswith('$talent'):
     await message.channel.send(file=discord.File('AXO-Genshin-Talent-Book.jpg'))
+  if msg.lower().startswith('$drops'):
+    await message.channel.send(file=discord.File('Drops.png'))
+  if msg.lower().startswith('$respawn'):
+    await message.channel.send(file=discord.File('Respawn.png'))  
   if msg.lower().startswith('$weapon'):
     await message.channel.send(file=discord.File('WeaponCheat.png'))
   if msg.lower().startswith('$char'):
@@ -117,6 +119,22 @@ async def on_message(message):
     thumb = discord.File('Character_Amber_Card.jpg')
     embed.set_thumbnail(url='attachment://Character_Amber_Card.jpg')
     await message.channel.send(embed=embed, file=thumb)
+
+  if msg.startswith('$buildjeandps'):
+    embed = discord.Embed(
+		    title="Jean Physical DPS Build",
+		    description=
+		    "**This build empowers Jean's physical damage output, turning her into a reliable hybrid between a DPS and a healer.**\n\nPreferred weapon: Aquila Favonia/ Prototype Rancour\nPreferred artifacts: 4-set Gladiator's Finale OR 2-set Bloodstained Chevalier, 2-set Gladiator's Finale",
+		    color=0x98FB98)
+    embed.add_field(
+		    name="**Recommended Stats**",
+		    value=
+		    "*In case set bonuses can't be achieved, focus on these stats on your artifacts !*\nDepending on how you want to play Jean, you may want to prioritize your stats a little differently. In general, we would recommend focusing on ATK%, CRIT%, CRIT DMG, and Energy Recharge. With these stats, you can focus on pumping out some serious damage while Jean’s out on the field and healing up the party.",
+		    inline=False)
+    thumb = discord.File('Character_Jean_Card.jpg')
+    embed.set_thumbnail(url='attachment://Character_Jean_Card.jpg')
+    await message.channel.send(embed=embed, file=thumb)
+
   if msg.startswith('$buildjeansupport'):
     embed = discord.Embed(
 		    title="Jean Anemo Support Build",
@@ -131,20 +149,7 @@ async def on_message(message):
     thumb = discord.File('Character_Jean_Card.jpg')
     embed.set_thumbnail(url='attachment://Character_Jean_Card.jpg')
     await message.channel.send(embed=embed, file=thumb)
-  if msg.startswith('$buildjeandps'):
-    embed = discord.Embed(
-		    title="Jean Physical DPS Build",
-		    description=
-		    "**This build empowers Jean's physical damage output, turning her into a reliable hybrid between a DPS and a healer.**\n\nPreferred weapon: Aquila Favonia/ Prototype Rancour\nPreferred artifacts: 4-set Gladiator's Finale OR 2-set Bloodstained Chevalier, 2-set Gladiator's Finale",
-		    color=0x98FB9898FB98)
-    embed.add_field(
-		    name="**Recommended Stats**",
-		    value=
-		    "*In case set bonuses can't be achieved, focus on these stats on your artifacts !*\nDepending on how you want to play Jean, you may want to prioritize your stats a little differently. In general, we would recommend focusing on ATK%, CRIT%, CRIT DMG, and Energy Recharge. With these stats, you can focus on pumping out some serious damage while Jean’s out on the field and healing up the party.",
-		    inline=False)
-    thumb = discord.File('Character_Jean_Card.jpg')
-    embed.set_thumbnail(url='attachment://Character_Jean_Card.jpg')
-    await message.channel.send(embed=embed, file=thumb)
+  
   if msg.startswith('$buildlisasupport'):
     embed = discord.Embed(
 		    title="Lisa Electro Support Build",
@@ -423,7 +428,7 @@ async def on_message(message):
 		    title="Sucrose Anemo Support Build",
 		    description=
 		    "**This build turns Sucrose's into an Elemental Mastery battery, increasing this stat as much as possible to share it with her party members.**\n\nPreferred weapon: Sacrificial Fragments/ Mappa Mare\nPreferred artifacts: 4-set Viridescent Venerer set, 4-set Instructor OR 2-set Instructor, 2-set Viridescent. Noblesse Oblige works too.",
-		    color=0x98FB9898FB98)
+		    color=0x98FB98)
   	embed.add_field(
 		    name="**Recommended Stats**",
 		    value=
@@ -432,16 +437,16 @@ async def on_message(message):
   	thumb = discord.File('Character_Sucrose_Card.jpg')
   	embed.set_thumbnail(url='attachment://Character_Sucrose_Card.jpg')
   	await message.channel.send(embed=embed, file=thumb)
-
+  
   if msg.startswith('$buildsucrosedps'):
-  	embed = discord.Embed(
+    embed = discord.Embed(
 		    title="Dude.",
 		    description=
 		    "**I won't support your craving to make all characters DPS.**",
-		    color=0x98FB9898FB98)
-  	thumb = discord.File('Character_Sucrose_Card.jpg')
-  	embed.set_thumbnail(url='attachment://Character_Sucrose_Card.jpg')
-  	await message.channel.send(embed=embed, file=thumb)
+		    color=0x98FB98)
+    thumb = discord.File('Character_Sucrose_Card.jpg')
+    embed.set_thumbnail(url='attachment://Character_Sucrose_Card.jpg')
+    await message.channel.send(embed=embed, file=thumb)
 
   if msg.startswith('$buildmonasupport'):
   	embed = discord.Embed(
@@ -528,7 +533,7 @@ async def on_message(message):
 		    title="Umm....",
 		    description=
 		    "**Her jade screen buffs your other characters, blocks enemy attacks and she creates crystallize shields.**\nThats about it.",
-		    color=0x800080)
+		    color=0xcc7722)
   	thumb = discord.File('Character_Ningguang_Card.jpg')
   	embed.set_thumbnail(url='attachment://Character_Ningguang_Card.jpg')
   	await message.channel.send(embed=embed, file=thumb)
@@ -538,7 +543,7 @@ async def on_message(message):
 		    title="Ningguang Geo DPS Build",
 		    description=
 		    "**Ningguang is a character that scales extremely well with high constellation levels, making her one of the burstier single target units in the game.**\n\nPreferred weapon: Solar Pearl/ The Widsith/ Lost Prayer to Sacred Winds\nPreferred artifacts: 2-set Gladiator's Finale + 2-set Archaic Petra OR 2-set Gladiator's + 2-set Noblesse Oblige",
-		    color=0x800080)
+		    color=0xcc7722)
   	embed.add_field(
 		    name="**Recommended Stats**",
 		    value=
@@ -814,7 +819,7 @@ async def on_message(message):
   	embed = discord.Embed(
 		    title="Outrider Commands",
 		    description=
-		    "\n1.$help- List of commands\n\n2.$hello- Greet the bot\n\n3.$inspire- Motivational Quote\n\n4.$daily- Most important Daily tasks ingame\n\n5.$talent- Talent Books Domain Guide\n\n6.$weapon- Weapon Ascension Material Guide\n\n7.$char- Character Ascension Material Guide\n\n8.$currency- Details about in-game currencies\n\n9.$artifact- Artifact Domain list\n\n**10.$build- Check for recommended builds according to role. For Example- $buildxinyandps will give you the DPS build for Xinyan. The roles are either Support or DPS, Support usually by default contains the DPS Support build.**\n\n**The bot talks to you upon encountering some keywords, so be on the hunt :)**",
+		    "\n1.$help- List of commands\n\n2.$hello- Greet the bot\n\n3.$inspire- Motivational Quote\n\n4.$daily- Most important Daily tasks ingame\n\n5.$talent- Talent Books Domain Guide\n\n6.$weapon- Weapon Ascension Material Guide\n\n7.$char- Character Ascension Material Requirements\n\n8.$currency- Details about in-game currencies\n\n9.$artifact- Artifact Domain list\n\n10.$respawn- Respawn Times for open-world resources\n\n11.$drops- All materials drop guides\n\n**12.$build- Check for recommended builds according to role. For Example- $buildxinyandps will give you the DPS build for Xinyan. The roles are either Support or DPS, Support usually by default contains the DPS Support build.**\n\n**The bot talks to you upon encountering some keywords, so be on the hunt :)**",
 		    color=0xC0C0C0)
   	thumb = discord.File('Character_Ganyu_Portraitcropped.png')
   	embed.set_thumbnail(
