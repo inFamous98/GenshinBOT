@@ -228,7 +228,7 @@ async def on_message(message):
 	  await message.channel.send(embed=embed, file=thumb)
 
   if msg.startswith('$buildbarbaradps'):
-	  embed = discord.Embed(
+    embed = discord.Embed(
 		    title="WTF",
 		    description="**Do you know how this character works?**\nBut to satisfy your urges, Barbara needs a very specific setup to deal those unrealistic numbers that youtubers and streamers influenced you with.\nPreferred Weapon: Widsith/Skyward Atlas/Lost Prayer of the Sacred Winds.\nPreferred Sets: 4-set Wanderer's Troupe, or 4-set Heart of Depth, either is fine.",
 		    color=0x0000FF)
@@ -237,9 +237,9 @@ async def on_message(message):
 		    value=
 		    "*In case set bonuses can't be achieved, focus on these stats on your artifacts !*\nOverall, focus on ATK%, CRIT%, CRIT DMG and Hydro Dmg Bonus Goblet. Deciding between ATK% and CRIT% priority is up to you, as they seem to have around the same effect on damage. Elemental Mastery Substats are fine too.\nYou must keep in mind that the high dmg numbers are in conjuntion with food buffs, abnormal levels of crit rate and damage, with Bennet ult buff and sucrose to decrease hydro Resistance by 30% using the 4-set Viridescent Venerer. YOU HAVE BEEN WARNED",
 		    inline=False)
-	  thumb = discord.File('Character_Barbara_Card.jpg')
-	  embed.set_thumbnail(url='attachment://Character_Barbara_Card.jpg')
-	  await message.channel.send(embed=embed, file=thumb)
+    thumb = discord.File('Character_Barbara_Card.jpg')
+    embed.set_thumbnail(url='attachment://Character_Barbara_Card.jpg')
+    await message.channel.send(embed=embed, file=thumb)
 
   if msg.startswith('$builddilucsupport'):
 	  embed = discord.Embed(
