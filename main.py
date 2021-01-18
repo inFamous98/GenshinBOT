@@ -3,6 +3,7 @@ import os
 import requests
 import json
 import random
+import re
 from keep_alive import keep_alive
 client = discord.Client()
 
@@ -65,6 +66,8 @@ def get_quote():
 @client.event
 async def on_message(message):
   msg = message.content
+  if ('build'+'mona'+'support') in msg.lower():
+    await message.channel.send('$buildmonasupport')
   if msg.lower().startswith('$daily'):
     await message.channel.send(file=discord.File('daily.png'))
   if msg.lower().startswith('$talent'):
@@ -86,6 +89,8 @@ async def on_message(message):
     await message.channel.send(quote)
   if msg.lower().startswith('$artifact'):
     await message.channel.send(file=discord.File('Artifact.jpg'))
+  if msg.lower().startswith('$quantity'):
+    await message.channel.send(file=discord.File('Quantity.jpg'))
   if any(word in msg for word in sad):
     await message.channel.send(random.choice(encourage))
   if any(word in msg for word in artifacts_bad):
@@ -96,6 +101,8 @@ async def on_message(message):
     await message.channel.send(random.choice(retort))
   if any(word in msg for word in praise_bot):
     await message.channel.send(random.choice(thanks))
+
+  
   if msg.startswith('$buildamberdps'):
     embed = discord.Embed(
 		    title="Amber Pyro/Support Build",
@@ -223,8 +230,13 @@ async def on_message(message):
   if msg.startswith('$buildbarbaradps'):
 	  embed = discord.Embed(
 		    title="WTF",
-		    description="**Do you know how this character works?**",
+		    description="**Do you know how this character works?**\nBut to satisfy your urges, Barbara needs a very specific setup to deal those unrealistic numbers that youtubers and streamers influenced you with.\nPreferred Weapon: Widsith/Skyward Atlas/Lost Prayer of the Sacred Winds.\nPreferred Sets: 4-set Wanderer's Troupe, or 4-set Heart of Depth, either is fine.",
 		    color=0x0000FF)
+    embed.add_field(
+		    name="**Recommended Stats**",
+		    value=
+		    "*In case set bonuses can't be achieved, focus on these stats on your artifacts !*\nOverall, focus on ATK%, CRIT%, CRIT DMG and Hydro Dmg Bonus Goblet. Deciding between ATK% and CRIT% priority is up to you, as they seem to have around the same effect on damage. Elemental Mastery Substats are fine too.\nYou must keep in mind that the high dmg numbers are in conjuntion with food buffs, abnormal levels of crit rate and damage, with Bennet ult buff and sucrose to decrease hydro Resistance by 30% using the 4-set Viridescent Venerer. YOU HAVE BEEN WARNED",
+		    inline=False)
 	  thumb = discord.File('Character_Barbara_Card.jpg')
 	  embed.set_thumbnail(url='attachment://Character_Barbara_Card.jpg')
 	  await message.channel.send(embed=embed, file=thumb)
@@ -442,8 +454,13 @@ async def on_message(message):
     embed = discord.Embed(
 		    title="Dude.",
 		    description=
-		    "**I won't support your craving to make all characters DPS.**",
+		    "**I won't support your craving to make all characters DPS.But anyway, here you go.**\nPreferred Weapon: Otherwordly Story/Sacrificial Fragments/Mappa Mare\n Preferred Sets: 2-set Gambler, 2-set Instructor or Viridescent Venerer.",
 		    color=0x98FB98)
+    embed.add_field(
+		    name="**Recommended Stats**",
+		    value=
+		    "*In case set bonuses can't be achieved, focus on these stats on your artifacts !*\nBasically tons of Elemental mastery in addition to crit rate and crit dmg, Atk% and energy regen substats,and Anemo dmg goblet. Sucrose's second talent gives 20% of her elemental mastery to all other party members.\nDPS sucrose needs a very specific team. Basically any team that has tons of elemental reactions, combination is upto you.",
+		    inline=False)
     thumb = discord.File('Character_Sucrose_Card.jpg')
     embed.set_thumbnail(url='attachment://Character_Sucrose_Card.jpg')
     await message.channel.send(embed=embed, file=thumb)
@@ -702,7 +719,7 @@ async def on_message(message):
   	embed = discord.Embed(
 		    title="Childe Hydro DPS Build",
 		    description=
-		    "**With the highest scaling Elemental Burst skill multiplier in the game, Tartaglia is an incredible Hydro damage dealer. Like Diluc, he becomes unstoppable with high constellations but does not need them to be extremely powerful. If you're playing with Noelle or a Geo character on your team, consider running the Retracing Bolide set instead.**\n\nPreferred weapon: Rust/ Sacrificial Bow\nPreferred artifacts: 2-set Gladiator's Finale, 2-set Noblesse Oblige or 2-set Wanderer's Troupe set. Use in combinations.",
+		    "**With the highest scaling Elemental Burst skill multiplier in the game, Tartaglia is an incredible Hydro damage dealer. Like Diluc, he becomes unstoppable with high constellations but does not need them to be extremely powerful. If you're playing with Noelle or a Geo character on your team, consider running the Retracing Bolide set instead.**\n\nPreferred weapon: Rust/ Skyward Harp/Stringless\nPreferred artifacts: 2,4-set Heart of Depth, 2-set Gladiator's Finale, 2-set Noblesse Oblige or 4-set Wanderer's Troupe set. Use in combinations.",
 		    color=0x0000FF)
   	embed.add_field(
 		    name="**Recommended Stats**",
@@ -813,13 +830,43 @@ async def on_message(message):
   	embed.set_thumbnail(url='attachment://Character_Albedo_Card.png')
   	await message.channel.send(embed=embed, file=thumb)
 
+  if msg.startswith('$buildganyudps'):
+  	embed = discord.Embed(
+		    title="Ganyu Cryo DPS Build",
+		    description=
+		    "**COCOGOAT Build!**\n\nPreferred weapon: Amos Bow/Prototype Crescent/Skyward Harp/Sharpshooter's Oath\nPreferred artifacts: 4-set Blizzard Strayer, 4-set Wanderer's",
+		    color=0xd6ecef)
+  	embed.add_field(
+		    name="**Recommended Stats**",
+		    value=
+		    "*In case set bonuses can't be achieved, focus on these stats on your artifacts !*\nNot much to think about. Just the usual. Atk%, Crit rate, Crit dmg, with cryo dmg bonus goblet.",
+		    inline=False)
+  	thumb = discord.File('Character_Ganyu_Card.png')
+  	embed.set_thumbnail(url='attachment://Character_Ganyu_Card.png')
+  	await message.channel.send(embed=embed, file=thumb)
+  
+  if msg.startswith('$buildganyusupport'):
+  	embed = discord.Embed(
+		    title="Ganyu Cryo Support Build",
+		    description=
+		    "**COCOGOAT Build!**\n\nPreferred weapon: Stringless/Prototype Crescent/Favonius Warbow/Sacrificial Bow\nPreferred artifacts: 4-set Noblesse, OR 2-set Blizzard Strayer, 2-set Noblesse",
+		    color=0xd6ecef)
+  	embed.add_field(
+		    name="**Recommended Stats**",
+		    value=
+		    "*In case set bonuses can't be achieved, focus on these stats on your artifacts !*\nFor the support build, Energy recharge, Elemental mastery and preferably crit rate and dmg substats would be ideal.",
+		    inline=False)
+  	thumb = discord.File('Character_Ganyu_Card.png')
+  	embed.set_thumbnail(url='attachment://Character_Ganyu_Card.png')
+  	await message.channel.send(embed=embed, file=thumb)
+
   if message.author == client.user:
     	return
   if msg.startswith('$help'):
   	embed = discord.Embed(
 		    title="Outrider Commands",
 		    description=
-		    "\n1.$help- List of commands\n\n2.$hello- Greet the bot\n\n3.$inspire- Motivational Quote\n\n4.$daily- Most important Daily tasks ingame\n\n5.$talent- Talent Books Domain Guide\n\n6.$weapon- Weapon Ascension Material Guide\n\n7.$char- Character Ascension Material Requirements\n\n8.$currency- Details about in-game currencies\n\n9.$artifact- Artifact Domain list\n\n10.$respawn- Respawn Times for open-world resources\n\n11.$drops- All materials drop guides\n\n**12.$build- Check for recommended builds according to role. For Example- $buildxinyandps will give you the DPS build for Xinyan. The roles are either Support or DPS, Support usually by default contains the DPS Support build.**\n\n**The bot talks to you upon encountering some keywords, so be on the hunt :)**",
+		    "\n1.$help- List of commands\n\n2.$hello- Greet the bot\n\n3.$inspire- Motivational Quote\n\n4.$daily- Most important Daily tasks ingame\n\n5.$talent- Talent Books Domain Guide\n\n6.$weapon- Weapon Ascension Material Guide\n\n7.$char- Character Ascension Material Requirements\n\n8.$currency- Details about in-game currencies\n\n9.$artifact- Artifact Domain list\n\n10.$respawn- Respawn Times for open-world resources\n\n11.$drops- All materials drop guides\n\n12.$quantity- Exacpt amounts of mora and materials required per level and ascension.\n\n**13.$build- Check for recommended builds according to role. For Example- $buildxinyandps will give you the DPS build for Xinyan. The roles are either Support or DPS, Support usually by default contains the DPS Support build.**\n\n**The bot talks to you upon encountering some keywords, so be on the hunt :)**",
 		    color=0xC0C0C0)
   	thumb = discord.File('Character_Ganyu_Portraitcropped.png')
   	embed.set_thumbnail(
