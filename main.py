@@ -454,12 +454,12 @@ async def on_message(message):
     embed = discord.Embed(
 		    title="Dude.",
 		    description=
-		    "**I won't support your craving to make all characters DPS.But anyway, here you go.**\nPreferred Weapon: Otherwordly Story/Sacrificial Fragments/Mappa Mare\n Preferred Sets: 2-set Gambler, 2-set Instructor or Viridescent Venerer.",
+		    "**I won't support your craving to make all characters DPS.But anyway, here you go.**\nPreferred Weapon: Otherwordly Story/Sacrificial Fragments/Mappa Mare\n Preferred Sets: 2-set Gambler, 2-set Instructor or 4-set Viridescent Venerer.",
 		    color=0x98FB98)
     embed.add_field(
 		    name="**Recommended Stats**",
 		    value=
-		    "*In case set bonuses can't be achieved, focus on these stats on your artifacts !*\nBasically tons of Elemental mastery in addition to crit rate and crit dmg, Atk% and energy regen substats,and Anemo dmg goblet. Sucrose's second talent gives 20% of her elemental mastery to all other party members.\nDPS sucrose needs a very specific team. Basically any team that has tons of elemental reactions, combination is upto you.",
+		    "*In case set bonuses can't be achieved, focus on these stats on your artifacts !*\nBasically tons of Elemental mastery in addition to crit rate and crit dmg, Atk% and energy regen substats,and Anemo dmg goblet. Sucrose's second talent gives 20% of her elemental mastery to all other party members.\nDPS sucrose needs a very specific team. Basically any team that has tons of elemental reactions, combination is upto you. Also, The EM build is only viable when used in teams with constant elemental applications, like xiangling,etc. If you dont have such characters, you are better off building traditional DPS stats like atk%, crit rate and crit dmg.",
 		    inline=False)
     thumb = discord.File('Character_Sucrose_Card.jpg')
     embed.set_thumbnail(url='attachment://Character_Sucrose_Card.jpg')
