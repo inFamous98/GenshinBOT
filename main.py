@@ -3,7 +3,6 @@ import os
 import requests
 import json
 import random
-import re
 from keep_alive import keep_alive
 client = discord.Client()
 
@@ -66,8 +65,6 @@ def get_quote():
 @client.event
 async def on_message(message):
   msg = message.content
-  if ('build'+'mona'+'support') in msg.lower():
-    await message.channel.send('$buildmonasupport')
   if msg.lower().startswith('$daily'):
     await message.channel.send(file=discord.File('daily.png'))
   if msg.lower().startswith('$talent'):
