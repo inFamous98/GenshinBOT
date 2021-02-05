@@ -857,6 +857,31 @@ async def on_message(message):
   	embed.set_thumbnail(url='attachment://Character_Ganyu_Card.png')
   	await message.channel.send(embed=embed, file=thumb)
 
+  if msg.startswith('$buildxiaodps'):
+  	embed = discord.Embed(
+		    title="Xiao Anemo Dps Build",
+		    description=
+		    "Preferred weapon: Skyward Spine/Blackcliff Pole/BP Spear/Crescent Pike/Prototype Stargliter\nPreferred artifacts: 2-set Gladiator OR 2-set Bloodstained with 2-set Viridescent",
+		    color=0x98FB98)
+  	embed.add_field(
+		    name="**Recommended Stats**",
+		    value=
+		    "*In case set bonuses can't be achieved, focus on these stats on your artifacts !*\nAs usual, Crit Dmg, a little less crit rate since he gains some from ascension, and an ATk% or anemo dmg cup.",
+		    inline=False)
+  	thumb = discord.File('Character_xiao_Card.jpg')
+  	embed.set_thumbnail(url='attachment://Character_Xiao_Card.jpg')
+  	await message.channel.send(embed=embed, file=thumb)
+
+  if msg.startswith('$buildxiaosupport'):
+  	embed = discord.Embed(
+		    title="Nope",
+		    description=
+		    "Take your business elsewhere.",
+		    color=0x98FB98)
+  	thumb = discord.File('Character_xiao_Card.jpg')
+  	embed.set_thumbnail(url='attachment://Character_Xiao_Card.jpg')
+  	await message.channel.send(embed=embed, file=thumb)
+
   if message.author == client.user:
     	return
   if msg.startswith('$help'):
