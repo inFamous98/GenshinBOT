@@ -69,8 +69,6 @@ async def on_message(message):
     await message.channel.send(file=discord.File('daily.png'))
   if msg.lower().startswith('$talent'):
     await message.channel.send(file=discord.File('AXO-Genshin-Talent-Book.jpg'))
-  if msg.lower().startswith('$drops'):
-    await message.channel.send(file=discord.File('Drops.png'))
   if msg.lower().startswith('$respawn'):
     await message.channel.send(file=discord.File('Respawn.png'))  
   if msg.lower().startswith('$weapon'):
@@ -84,8 +82,6 @@ async def on_message(message):
   if msg.lower().startswith('$inspire'):
     quote = get_quote()
     await message.channel.send(quote)
-  if msg.lower().startswith('$artifact'):
-    await message.channel.send(file=discord.File('Artifact.jpg'))
   if msg.lower().startswith('$quantity'):
     await message.channel.send(file=discord.File('Quantity.jpg'))
   if any(word in msg for word in sad):
@@ -100,7 +96,7 @@ async def on_message(message):
     await message.channel.send(random.choice(thanks))
 
   
-  if msg.startswith('$buildamberdps'):
+  if msg.startswith('$buildambersupport'):
     embed = discord.Embed(
 		    title="Amber Pyro/Support Build",
 		    description=
@@ -112,9 +108,9 @@ async def on_message(message):
     thumb = discord.File('Character_Amber_Card.jpg')
     embed.set_thumbnail(url='attachment://Character_Amber_Card.jpg')
     await message.channel.send(embed=embed, file=thumb)
-  if msg.startswith('$buildambersupport'):
+  if msg.startswith('$buildamberdps'):
     embed = discord.Embed(title="Amber Aimed Shot Build",
-		    description="**The idea behind this build is to fire a powerful, fully charged Aimed Shot with Amber every 10 seconds, taking advantage of the extra arrow from her first constellation, One Arrow to Rule Them All.**\n\nPreferred weapon: Sharpshooter's Oath/ Messenger\nPreferred artifacts: 4-set Wanderer's Troupe",color=0xFF0000)
+		    description="**The idea behind this build is to fire a powerful, fully charged Aimed Shot with Amber every 10 seconds, taking advantage of the extra arrow from her first constellation, One Arrow to Rule Them All.**\n\nPreferred weapon: Sharpshooter's Oath/ Messenger / Amos Bow\nPreferred artifacts: 4-set Wanderer's Troupe",color=0xFF0000)
     embed.add_field(
 		    name="**Recommended Stats**",
 		    value=
@@ -187,7 +183,7 @@ async def on_message(message):
   	embed = discord.Embed(
 		    title="Kaeya Cryo DPS Build",
 		    description=
-		    "**This build empower's Kaeya's Normal Attack, Charged Attack and Elemental Skill/Burst**\n\nPreferred weapon:  Cool Steel / Prototype Rancour\nPreferred artifacts: 2,4-set Noblesse Oblige or Gladiator's Finale, Berserker and Exile works too.",
+		    "**This build empower's Kaeya's Normal Attack, Charged Attack and Elemental Skill/Burst**\n\nPreferred weapon:  Cool Steel / Prototype Rancour\nPreferred artifacts: 2,4-set Noblesse Oblige, Gladiator's Finale or 4-set Blizzard Strayer.",
 		    color=0xd6ecef)
   	embed.add_field(
 		    name="**Recommended Stats**",
@@ -202,7 +198,7 @@ async def on_message(message):
     embed = discord.Embed(
   	    title="Kaeya Cryo Support Build",
   	    description=
-		    "**This build empowers Kaeya's Elemental Burst ability which procs multiple times, leading to very consistent elemental reactions and damage. This build becomes much more powerful with Constellation level 6.**\n\nPreferred weapon:  Skyward Blade / Favonius Sword\nPreferred artifacts: 2,4-set Noblesse Oblige or 2,4-set Instructor's set.",
+		    "**This build empowers Kaeya's Elemental Burst ability which procs multiple times, leading to very consistent elemental reactions and damage. This build becomes much more powerful with Constellation level 6.**\n\nPreferred weapon:  Skyward Blade / Favonius Sword\nPreferred artifacts: 2,4-set Noblesse Oblige or 2,4-set Instructor's set or 2,4-set Blizzard Strayer.",
 		    color=0xd6ecef)
     embed.add_field(name="**Recommended Stats**", value="*In case set bonuses can't be achieved, focus on these stats on your artifacts !*\nKaeya’s elemental abilities do more damage based on your ATK stat. For that reason, the primary stat to focus on is ATK% for your Artifacts. You can also try and go for a Goblet with Cryo bonus damage if you can get lucky enough. For secondary stats, focus on CRIT%, CRIT damage, and ATK. You can throw on some Elemental Mastery or Energy Recharge for most effective results.",inline=False)
     thumb = discord.File('Character_Kaeya_Card.jpg')
@@ -251,7 +247,7 @@ async def on_message(message):
 	  embed = discord.Embed(
 		    title="Diluc Pyro DPS Build",
 		    description=
-		    "**This build can work without any constellations, making Diluc an unstoppable Pyro DMG dealing Machine !**\n\nPreferred weapon: Wolf's Gravestone / Prototype Aminus\nPreferred artifacts: 2,4-set Crimson Witch of Flames, 2,4-set Gladiator's Finale or Berserker sets.",
+		    "**This build can work without any constellations, making Diluc an unstoppable Pyro DMG dealing Machine !**\n\nPreferred weapon: Wolf's Gravestone / Prototype Archaic\nPreferred artifacts: 2,4-set Crimson Witch of Flames, 2,4-set Gladiator's Finale or Berserker sets.",
 		    color=0xFF0000)
 	  embed.add_field(
 		    name="**Recommended Stats**",
@@ -266,7 +262,7 @@ async def on_message(message):
 	  embed = discord.Embed(
 		    title="Razor Electro DPS Build",
 		    description=
-		    "**This build empowers Razor's physical damage and electro damage output, synergising with the bonuses from his Lightning Fang burst skill.**\n\nPreferred weapon: Wolf's Gravestone / Prototype Aminus/ Debate Club\nPreferred artifacts: 2,4-set Thundering Fury, 2,4-set Gladiator's Finale or Berserker sets.",
+		    "**This build empowers Razor's physical damage and electro damage output, synergising with the bonuses from his Lightning Fang burst skill.**\n\nPreferred weapon: Wolf's Gravestone / Prototype Archaic/ Debate Club\nPreferred artifacts: 2,4-set Thundering Fury, 2,4-set Gladiator's Finale or Berserker sets.",
 		    color=0x800080)
 	  embed.add_field(
 		    name="**Recommended Stats**",
@@ -406,7 +402,7 @@ async def on_message(message):
   	embed = discord.Embed(
   	    title="Fischl Electro/Physical DPS Build",
 		    description=
-		    "**This build empowers Fischl's physical damage and electro damage output, synergising with the bonuses from Oz and Burst skill.**\n\nPreferred weapon: Stringless / Skyward Harp/ Slingshot\nPreferred artifacts: 2,4-set Thundering Fury, 2,4-set Gladiator's OR 4-set Gladiator's Finale.",
+		    "**This build empowers Fischl's physical damage and electro damage output, synergising with the bonuses from Oz and Burst skill.**\n\nPreferred weapon: Stringless / Skyward Harp/ Favonius Warbow/ Rust/ Compound Bow\nPreferred artifacts: 2,4-set Thundering Fury, 2-set Gladiator's with 2- Thundering Fury, 4-set Pale Flame",
 		    color=0x800080)
   	embed.add_field(
 		    name="**Recommended Stats**",
@@ -466,7 +462,7 @@ async def on_message(message):
   	embed = discord.Embed(
 		    title="Mona Hydro Support Build",
 		    description=
-		    "**Mona excels at empowering DPS units through the use of her Burst Skill making energy recharge incredibly valuable.**\n\nPreferred weapon: Mappa Mare/ Solar Pearl/ Favonius Codex/ The Widsith\nPreferred artifacts: 2,4-set Noblesse Oblige.",
+		    "**Mona excels at empowering DPS units through the use of her Burst Skill making energy recharge incredibly valuable.**\n\nPreferred weapon: Mappa Mare/ Solar Pearl/ Favonius Codex/ The Widsith\nPreferred artifacts: 2,4-set Noblesse Oblige or 2,4- Heart of depth.",
 		    color=0x0000FF)
   	embed.add_field(
 		    name="**Recommended Stats**",
@@ -481,7 +477,7 @@ async def on_message(message):
   	embed = discord.Embed(
 		    title="Mona Hydro DPS Build",
 		    description=
-		    "** Using powerful Hydro elemental abilities, Mona can pump out some of the greatest damage in the game. It’s essential to build her correctly to maximize her damage potential and optimize party synergy.**\n\nPreferred weapon: Mappa Mare/ Solar Pearl/ Favonius Codex/The Widsith\nPreferred artifacts:Exile, Wanderer’s Troupe or Instructors",
+		    "** Using powerful Hydro elemental abilities, Mona can pump out some of the greatest damage in the game. It’s essential to build her correctly to maximize her damage potential and optimize party synergy.**\n\nPreferred weapon: Mappa Mare/ Solar Pearl/ Favonius Codex/The Widsith\nPreferred artifacts: 2-Noblesse, 2-Gladiator or 2-Noblesse, 2-Heart of depth.",
 		    color=0x0000FF)
   	embed.add_field(
 		    name="**Recommended Stats**",
@@ -496,7 +492,7 @@ async def on_message(message):
   	embed = discord.Embed(
 		    title="Diona Cryo Support Build",
 		    description=
-		    "**Diona can work great as a source superconductor and extra protection for physical carries like Razor. She can also be used to set up melt reactions for Pyro carries.**\n\nPreferred weapon: Sacrificial Bow / Favonius Warbow\nPreferred artifacts: 2,4-set Maiden Beloved or 2,4-set Noblesse Oblige",
+		    "**Diona can work great as a source superconductor and extra protection for physical carries like Razor. She can also be used to set up melt reactions for Pyro carries.**\n\nPreferred weapon: Sacrificial Bow / Favonius Warbow\nPreferred artifacts: 2,4-set Maiden Beloved or 2,4-set Noblesse Oblige, or any of those in combination with 2-set Tenacity of the Millelith.",
 		    color=0xd6ecef)
   	embed.add_field(
 		    name="**Recommended Stats**",
@@ -518,29 +514,27 @@ async def on_message(message):
   	await message.channel.send(embed=embed, file=thumb)
 
   if msg.startswith('$buildbeidoudps'):
-  	embed = discord.Embed(
+    embed = discord.Embed(
 		    title="Beidou Electro DPS Build",
 		    description=
 		    "**Beidou's damage output spikes when perfectly timing the counterattack from her second skill, Tidecaller, after you've unlocked her 1st and 2nd passive talents. This will give you a 10 second window of increased damage from your normal and charged attacks.**\n\nPreferred weapon: Wolf's Gravestone/ Prototype Aminus\nPreferred artifacts: 4-set Gladiator's Finale",
 		    color=0x800080)
-  	embed.add_field(
+    embed.add_field(
 		    name="**Recommended Stats**",
 		    value=
 		    "*In case set bonuses can't be achieved, focus on these stats on your artifacts !*\nBeidou’s stat build follows the traditional DPS, meaning you should focus on raw damage in the form of ATK% and CRIT%. She deals Electro damage, meaning you could also use some plus Electro damage artifacts, but we’ll cover that in the artifacts section. For your third and fourth stat rolls, focus on CRIT DMG and ATK to further boost your DPS. These are the four main stats. All of Beidou’s move scale with ATK, except for her shield, which scales with HP. We would not recommend sacrificing ATK for HP, though.",
 		    inline=False)
-  	thumb = discord.File('Character_Beidou_Card.jpg')
-  	embed.set_thumbnail(url='attachment://Character_Beidou_Card.jpg')
-  	await message.channel.send(embed=embed, file=thumb)
+    thumb = discord.File('Character_Beidou_Card.jpg')
+    embed.set_thumbnail(url='attachment://Character_Beidou_Card.jpg')
+    await message.channel.send(embed=embed, file=thumb)
 
   if msg.startswith('$buildbeidousupport'):
-  	embed = discord.Embed(
-		    title="Beidou Electro Support Build",
-		    description=
-		    "**Frankly, her skillset does not provide much support except for the parry shield, so just build her DPS instead.**",
-		    color=0x800080)
-  	thumb = discord.File('Character_Beidou_Card.jpg')
-  	embed.set_thumbnail(url='attachment://Character_Beidou_Card.jpg')
-  	await message.channel.send(embed=embed, file=thumb)
+    embed = discord.Embed(
+		    title="Beidou Electro Support Build",description="**Beidou's Ult, due to a misinterpretation, was underestimated and later found that the ability stays even after she is off the field, which is the basic requirement for support abilities.**\n\nPreferred weapon: Wolf's Gravestone/ Sacrificial Greatsword/ Favonius Greatsword\nPreferred artifacts: 2- Gladiator's Finale, 2-Thundering Fury or 2-Gladiator, 2-Noblesse", color=0x800080)
+    embed.add_field(name="**Recommended Stats**", value="*In case set bonuses can't be achieved, focus on these stats on your artifacts!*\nShitload of Energy Recharge. You need it. You want it. After you have over 200ER, stack Crit rate and Crit dmg.",inline=False)
+    thumb = discord.File('Character_Beidou_Card.jpg')
+    embed.set_thumbnail(url='attachment://Character_Beidou_Card.jpg')
+    await message.channel.send(embed=embed, file=thumb)
 
   if msg.startswith('$buildningguangsupport'):
   	embed = discord.Embed(
@@ -601,7 +595,7 @@ async def on_message(message):
   	embed = discord.Embed(
 		    title="Xingqiu Hydro Support Build",
 		    description=
-		    "**Xingqiu can be a reliable source of Hydro reactions thanks to his Elemental Burst ability, while providing useful damage reduction and healing to his party members. At Constellation level 2, he becomes incredible powerful when paired with a Hydro DPS unit.**\n\nPreferred weapon: Sacrificial Sword/ Favonius Sword\nPreferred artifacts: 2,4-set Noblesse Oblige.",
+		    "**Xingqiu can be a reliable source of Hydro reactions thanks to his Elemental Burst ability, while providing useful damage reduction and healing to his party members. At Constellation level 2, he becomes incredible powerful when paired with a Hydro DPS unit.**\n\nPreferred weapon: Sacrificial Sword/ Favonius Sword\nPreferred artifacts: 2,4-set Noblesse Oblige or 2-Noblesse, 2-Heart of Depth.",
 		    color=0x0000FF)
   	embed.add_field(
 		    name="**Recommended Stats**",
@@ -616,7 +610,7 @@ async def on_message(message):
   	embed = discord.Embed(
 		    title="Xingqiu Hydro DPS Build",
 		    description=
-		    "**You can build him using the traditional melee damage build, which consists of stacking ATK on your artifacts, with optional Hydro bonus damage stats on your Goblet.**\n\nPreferred weapon: Prototype Rancour/ Skyward Blade/ Fillet Blade\nPreferred artifacts: 2,4-set Noblesse Oblige OR 2,4-set Exile Set",
+		    "**You can build him using the traditional melee damage build, which consists of stacking ATK on your artifacts, with optional Hydro bonus damage stats on your Goblet.**\n\nPreferred weapon: Prototype Rancour/ Skyward Blade/ Fillet Blade\nPreferred artifacts: 2,4-set Noblesse Oblige OR 2,4-set Heart of Depth.",
 		    color=0x0000FF)
   	embed.add_field(
 		    name="**Recommended Stats**",
@@ -646,7 +640,7 @@ async def on_message(message):
   	embed = discord.Embed(
   	    title="Chongyun Cryo DPS Build",
 		    description=
-		    "**While Chongyun can be built like other standard Claymore users with a Gladiator set, his true power comes from his Elemental Burst skill. A lot of his constellations also empower this ability. As such, this build piles on, making his Ultimate as strong as possible.**\n\nPreferred weapon:  Skyward Pride / Favonius Greatsword\nPreferred artifacts: 2,4-set Noblesse Oblige or 2,4-set Instructor's set.",
+		    "**While Chongyun can be built like other standard Claymore users with a Gladiator set, his true power comes from his Elemental Burst skill. A lot of his constellations also empower this ability. As such, this build piles on, making his Ultimate as strong as possible.**\n\nPreferred weapon:  Skyward Pride / Favonius Greatsword\nPreferred artifacts: 2,4-Gladiator's or 2-Blizzard Strayer,2-Gladiator.",
 		    color=0xd6ecef)
   	embed.add_field(
 		    name="**Recommended Stats**",
@@ -691,7 +685,7 @@ async def on_message(message):
   	embed = discord.Embed(
 		    title="Keqing Electro DPS Build",
 		    description=
-		    "**Keqing has the highest single target charged attack DPS in the game. This build turns Keqing into a crit machine, taking advantage of the boost to CRIT DMG she gets with every ascension level.**\n\nPreferred weapon: Lion's Roar/ Black Sword/ Iron Sting\nPreferred artifacts: 4-set Gladiator's Finale OR 4-set Thundering Fury Or 2-set Gladiator and Thundering Fury.",
+		    "**Keqing has the highest single target charged attack DPS in the game. This build turns Keqing into a crit machine, taking advantage of the boost to CRIT DMG she gets with every ascension level.**\n\nPreferred weapon: Promordial Cutter/ Lion's Roar/ Black Sword/ Iron Sting\nPreferred artifacts: 4-set Thundersoother's OR 4-set Thundering Fury Or 2-set Gladiator and Thundering Fury.",
 		    color=0x800080)
   	embed.add_field(
 		    name="**Recommended Stats**",
@@ -741,7 +735,7 @@ async def on_message(message):
   	embed = discord.Embed(
 		    title="Zhongli Geo DPS Build",
 		    description=
-		    "**This is a build that is really NOT recommended, because he isn't meant to do this, but doesn't mean he can't.**\n\nPreferred weapon: Primordial Jade Spear/ Crescent Pike\nPreferred artifacts: 2,4-set Retracing Bolide with 2,4-set Archaic Petra. 2 of each bring the best out of both his basic atk and skills. Go full Bolide for a Physical DPS build.",
+		    "**This is a build that is really NOT recommended, because he isn't meant to do this, but doesn't mean he can't.**\n\nPreferred weapon: Primordial Jade Spear/ Crescent Pike/ Staff of Homa\nPreferred artifacts: 2,4-set Millelith or 2,4-set Retracing Bolide with 2,4-set Archaic Petra. 2 of each bring the best out of both his basic atk and skills. Go full Bolide or full Pale Flame set for a Physical DPS build.",
 		    color=0xcc7722)
   	embed.add_field(
 		    name="**Recommended Stats**",
@@ -756,7 +750,7 @@ async def on_message(message):
   	embed = discord.Embed(
 		    title="Zhongli Geo Support Build",
 		    description=
-		    "**Definitely the best way to go about building Zhongli. Zhongli can be a great defensive support through the use of geo shields, pillars, and petrification.**\n\nPreferred weapon: Skyward Spine/ Crescent Pike/ Prototype Grudge\nPreferred artifacts: 2-set Retracing Bolide with 2-set Archaic Petra OR 2-set Archaic and 2-set Noblesse Oblige. Personally, I use the latter and is probably the best support build.",
+		    "**Definitely the best way to go about building Zhongli. Zhongli can be a great defensive support through the use of geo shields, pillars, and petrification.**\n\nPreferred weapon: Skyward Spine/ Crescent Pike/ Prototype Grudge\nPreferred artifacts: 2-set Retracing Bolide with 2-set Archaic Petra OR 2-set Archaic and 2-set Noblesse Oblige or 2,4-set Millelith.",
 		    color=0xcc7722)
   	embed.add_field(
 		    name="**Recommended Stats**",
@@ -868,7 +862,7 @@ async def on_message(message):
 		    value=
 		    "*In case set bonuses can't be achieved, focus on these stats on your artifacts !*\nAs usual, Crit Dmg, a little less crit rate since he gains some from ascension, and an ATk% or anemo dmg cup.",
 		    inline=False)
-  	thumb = discord.File('Character_Xiao_Card.jpg')
+  	thumb = discord.File('Character_xiao_Card.jpg')
   	embed.set_thumbnail(url='attachment://Character_Xiao_Card.jpg')
   	await message.channel.send(embed=embed, file=thumb)
 
@@ -878,9 +872,178 @@ async def on_message(message):
 		    description=
 		    "Take your business elsewhere.",
 		    color=0x98FB98)
-  	thumb = discord.File('Character_Xiao_Card.jpg')
+  	thumb = discord.File('Character_xiao_Card.jpg')
   	embed.set_thumbnail(url='attachment://Character_Xiao_Card.jpg')
   	await message.channel.send(embed=embed, file=thumb)
+
+  if msg.startswith('$buildrosariadps'):
+  	embed = discord.Embed(
+		    title="Rosaria DPS Build",
+		    description=
+		    "**This build empower's Rosaria's Normal Attack, Charged Attack and Elemental Skill/Burst**\n\nPreferred weapon: Dragonspine Spear/ Crescent Pike/ Primordial Spear/ Deathmatch/ Skyward spine\nPreferred artifacts: 2,4-set Gladiator's Finale or 2-set Bloodstained, 2-Gladiator. Gladiator's can be replaced with 2-set Blizzard strayer.",
+		    color=0xd6ecef)
+  	embed.add_field(
+		    name="**Recommended Stats**",
+		    value=
+		    "*In case set bonuses can't be achieved, focus on these stats on your artifacts !*\nThe primary stat to focus on is Crit% for your Artifacts. You can also try and go for a Goblet with Physical bonus damage if you can get lucky enough. For secondary stats, focus on Energy recharge and ATK%. You can throw on some Elemental Mastery too.",
+		    inline=False)
+  	thumb = discord.File('Character_Rosaria_Card.png')
+  	embed.set_thumbnail(url='attachment://Character_Rosaria_Card.png')
+  	await message.channel.send(embed=embed, file=thumb)
+
+  if msg.startswith('$buildrosariasupport'):
+    embed = discord.Embed(
+  	    title="Rosaria Cryo Support Build",
+  	    description=
+		    "**This build empowers Rosaria's Elemental skills which procs enough, while charging her ult should be the priority.**\n\nPreferred weapon: Favonius Lance/ Skyward Spine /Prototype Starglitter\nPreferred artifacts: 2,4-set Noblesse Oblige or 2,4-set Instructor's set or 2 Blizzard Strayer, 2-Noblesse.",
+		    color=0xd6ecef)
+    embed.add_field(name="**Recommended Stats**", value="*In case set bonuses can't be achieved, focus on these stats on your artifacts !*\nLots of energy recharge, a little elemental mastery, or vice versa. once thats done, stack crit rate and crit dmg, remember, she gains Crit rate from ascension, so balance it out.",inline=False)
+    thumb = discord.File('Character_Rosaria_Card.png')
+    embed.set_thumbnail(url='attachment://Character_Rosaria_Card.png')
+    await message.channel.send(embed=embed, file=thumb)
+
+  if msg.startswith('$buildhutaodps'):
+	  embed = discord.Embed(
+		    title="Hu Tao Pyro DPS Build",
+		    description=
+		    "**You know You are skilled when you ace a domain or battle with a character consistently below 50% HP....**\n\nPreferred weapon: Staff of Homa/ Blackcliff Pole /Primordial Jade Spear /Deathmatch /Dragon's Bane /Prototype Starglitter\nPreferred artifacts: 2,4-set Crimson Witch of Flames or 2-Noblesse, 2-Crimson.",
+		    color=0xFF0000)
+	  embed.add_field(
+		    name="**Recommended Stats**",
+		    value=
+		    "*In case set bonuses can't be achieved, focus on these stats on your artifacts !*\nOverall, focus on ATK%, CRIT%, CRIT DMG for the endgame. Deciding between ATK% and CRIT% priority is up to you, as they seem to have around the same effect on damage. Most importantly, stack HP%. that's where the good shit is.",
+		    inline=False)
+	  thumb = discord.File('Character_Hu_Tao_Card.jpg')
+	  embed.set_thumbnail(url='attachment://Character_Hu_Tao_Card.jpg')
+	  await message.channel.send(embed=embed, file=thumb)
+
+  if msg.startswith('$buildhutaosupport'):
+	  embed = discord.Embed(
+		    title="Seriously?",
+		    description="**Da Da Da Da Da Dun, you've been pranked!**",
+		    color=0xFF0000)
+	  thumb = discord.File('Character_Hu_Tao_Card.jpg')
+	  embed.set_thumbnail(url='attachment://Character_Hu_Tao_Card.jpg')
+	  await message.channel.send(embed=embed, file=thumb)
+
+  if msg.startswith('$buildeuladps'):
+  	embed = discord.Embed(
+		    title="Eula DPS Build",
+		    description=
+		    "**This build mainly focuses on building Eula's physical damage which is her main jam**\n\nPreferred weapon: Snow-Tombed Starsilver/ Skyward Pride/ Song of Broken Pines\nPreferred artifacts: 2,4-set Gladiator's Finale or 2-set Bloodstained, 2-Gladiator. Gladiator's can be replaced with 2-set Blizzard strayer, or 2,4-piece Pale Flame. If full Physical, go for 2-Bloodstained,2-Pale Flame.",
+		    color=0xd6ecef)
+  	embed.add_field(
+		    name="**Recommended Stats**",
+		    value=
+		    "*In case set bonuses can't be achieved, focus on these stats on your artifacts !*\nThe primary stat to focus on is Crit% for your Artifacts. You can also try and go for a Goblet with Physical bonus damage if you can get lucky enough. For secondary stats, focus on Energy recharge and ATK%.",
+		    inline=False)
+  	thumb = discord.File('Character_Eula_Card.png')
+  	embed.set_thumbnail(url='attachment://Character_Eula_Card.png')
+  	await message.channel.send(embed=embed, file=thumb)
+
+  if msg.startswith('$buildeulasupport'):
+	  embed = discord.Embed(
+		    title="Are you sure?",
+		    description="Here is my reaction, depicted perfectly.",
+		    color=0xd6ecef)
+	  thumb = discord.File('why.gif')
+	  embed.set_thumbnail(url='attachment://Character_Eula_Card.jpg')
+	  await message.channel.send(embed=embed, file=thumb)
+
+  if msg.startswith('$buildyanfeidps'):
+	  embed = discord.Embed(
+		    title="Yanfei Pyro DPS Build",
+		    description=
+		    "**I don't even know how to introduce her so just read stuff**\n\nPreferred weapon: Lost Prayer to the Sacred Winds/ The Widsith\nPreferred artifacts: 2,4-set Crimson Witch of Flames or 4-set Wanderer's Troupe.",
+		    color=0xFF0000)
+	  embed.add_field(
+		    name="**Recommended Stats**",
+		    value=
+		    "*In case set bonuses can't be achieved, focus on these stats on your artifacts !*\nOverall, focus on ATK%, CRIT%, CRIT DMG for the endgame. Deciding between ATK% and CRIT% priority is up to you, as they seem to have around the same effect on damage.",
+		    inline=False)
+	  thumb = discord.File('Character_Yanfei_Card.png')
+	  embed.set_thumbnail(url='attachment://Character_Yanfei_Card.png')
+	  await message.channel.send(embed=embed, file=thumb)
+    
+  if msg.startswith('$buildyanfeisupport'):
+    embed = discord.Embed(
+		    title="**Yanfei Support Build**",
+		    description="**Yanfei Primarily deals dmg through her charged attacks**\nPreferred weapon: Lost Prayer to the Sacred Winds/ The Widsith/ Mappa Mare\nPreferred artifacts:4-set Wanderer's Troupe.",
+		    color=0xFF0000)
+    embed.add_field(name ="**Recommended Stats**",value="*In case set bonuses can't be achieved, focus on these stats on your artifacts !*\nOverall, for support you may probably want to increase your elemental mastery and energy recharge to trigger reactions. Crit rate and dmg is always good to have.",inline=False)
+    thumb = discord.File('Character_Yanfei_Card.png')
+    embed.set_thumbnail(url='attachment://Character_Yanfei_Card.jpg')
+    await message.channel.send(embed=embed, file=thumb)
+
+  if msg.startswith('$artifacts'):
+    embed = discord.Embed(
+		    title="Artifact list",
+		    description=
+		    "**Below are all the artifact sets listed. Take your pick, and type in the command $A+the number synonymous with the particular set. For eg: If the set you want info on is stated at number 10 on the list, just type $A10 for the set info. Have fun!**\n\n*3 star artifacts only*\n1.Adventurer's\n2.Lucky Dog\n3.Traveling Doctor\n\n*4 star artifacts only*\n4.Instructor\n5.Berserker\n6.The Exile\n7.Brave Heart\n8.Resolution of Sojourner\n9.Martial Artist\n10.Gambler\n11.Defender's Will\n12.Scholar\n13.Tiny Miracle\n\n*Available as both 4 star and 5 star*\n14.Gladiator's Finale\n15.Wanderer's Troupe\n16.Noblesse Oblige\n17.Maiden Beloved\n18.Retracing Bolide\n19.Crimson Witch of Flames\n20.Lavawalker\n21.Heart of Depth\n21.Thundering Fury\n22.Thundersoother\n24.Viridescent Venerer\n25.Blizzard Strayer\n26.Archaic Petra\n27.Bloodstained Chivalry\n28.Tenacity of the Millelith\n29.Pale Flame\n\n**All artifact details show the 2 piece and 4 piece bonuses respectively.**",
+		    color=0xC0C0C0)
+    thumb = discord.File('amber.jpg')
+    embed.set_thumbnail(
+		    url='attachment://amber.jpg')
+    await message.channel.send(embed=embed, file=thumb)
+  
+  if msg == '$A1':
+    await message.channel.send(file=discord.File('Adventurer.PNG'))
+  if msg == '$A2':
+    await message.channel.send(file=discord.File('Lucky.PNG'))
+  if msg == '$A3':
+    await message.channel.send(file=discord.File('doctor.PNG'))
+  if msg.startswith('$A4'):
+    await message.channel.send(file=discord.File('Instructor.PNG'))
+  if msg.startswith('$A5'):
+    await message.channel.send(file=discord.File('berserker.PNG'))
+  if msg.startswith('$A6'):
+    await message.channel.send(file=discord.File('exile.PNG'))
+  if msg.startswith('$A7'):
+    await message.channel.send(file=discord.File('brave.PNG'))
+  if msg.startswith('$A8'):
+    await message.channel.send(file=discord.File('sojourner.PNG'))
+  if msg.startswith('$A9'):
+    await message.channel.send(file=discord.File('martial.PNG'))
+  if msg.startswith('$A10'):
+    await message.channel.send(file=discord.File('gambler.PNG'))
+  if msg.startswith('$A11'):
+    await message.channel.send(file=discord.File('defenders.PNG'))
+  if msg.startswith('$A12'):
+    await message.channel.send(file=discord.File('scholar.PNG'))
+  if msg.startswith('$A13'):
+    await message.channel.send(file=discord.File('tiny miracle.PNG'))
+  if msg.startswith('$A14'):
+    await message.channel.send(file=discord.File('gladiators.PNG'))
+  if msg.startswith('$A15'):
+    await message.channel.send(file=discord.File('wanderers.PNG'))
+  if msg.startswith('$A16'):
+    await message.channel.send(file=discord.File('noblesse.PNG'))
+  if msg.startswith('$A17'):
+    await message.channel.send(file=discord.File('maiden.PNG'))
+  if msg.startswith('$A18'):
+    await message.channel.send(file=discord.File('retracing.PNG'))
+  if msg.startswith('$A19'):
+    await message.channel.send(file=discord.File('crimson.PNG'))
+  if msg.startswith('$A20'):
+    await message.channel.send(file=discord.File('lavawalker.PNG'))
+  if msg.startswith('$A21'):
+    await message.channel.send(file=discord.File('heart.PNG'))
+  if msg.startswith('$A22'):
+    await message.channel.send(file=discord.File('thundering.PNG'))
+  if msg.startswith('$A23'):
+    await message.channel.send(file=discord.File('thundersoother.PNG'))
+  if msg.startswith('$A24'):
+    await message.channel.send(file=discord.File('viridescent.PNG'))
+  if msg.startswith('$A25'):
+    await message.channel.send(file=discord.File('blizzard.PNG'))
+  if msg.startswith('$A26'):
+    await message.channel.send(file=discord.File('petra.PNG'))
+  if msg.startswith('$A27'):
+    await message.channel.send(file=discord.File('chivalry.PNG'))
+  if msg.startswith('$A28'):
+    await message.channel.send(file=discord.File('millelith.PNG'))
+  if msg == '$A29':
+    await message.channel.send(file=discord.File('pale flame.PNG'))
 
   if message.author == client.user:
     	return
@@ -888,11 +1051,11 @@ async def on_message(message):
   	embed = discord.Embed(
 		    title="Outrider Commands",
 		    description=
-		    "\n1.$help- List of commands\n\n2.$hello- Greet the bot\n\n3.$inspire- Motivational Quote\n\n4.$daily- Most important Daily tasks ingame\n\n5.$talent- Talent Books Domain Guide\n\n6.$weapon- Weapon Ascension Material Guide\n\n7.$char- Character Ascension Material Requirements\n\n8.$currency- Details about in-game currencies\n\n9.$artifact- Artifact Domain list\n\n10.$respawn- Respawn Times for open-world resources\n\n11.$drops- All materials drop guides\n\n12.$quantity- Exacpt amounts of mora and materials required per level and ascension.\n\n**13.$build- Check for recommended builds according to role. For Example- $buildxinyandps will give you the DPS build for Xinyan. The roles are either Support or DPS, Support usually by default contains the DPS Support build.**\n\n**The bot talks to you upon encountering some keywords, so be on the hunt :)**",
+		    "\n1.$help- List of commands\n\n2.$hello- Greet the bot\n\n3.$inspire- Motivational Quote\n\n4.$daily- Most important Daily tasks ingame\n\n5.$talent- Talent Books Domain Guide\n\n6.$weapon- Weapon Ascension Material Guide\n\n7.$char- Character Ascension Material Requirements\n\n8.$currency- Details about in-game currencies\n\n9.$artifacts- Artifacts List\n\n10.$respawn- Respawn Times for open-world resources\n\n11.$quantity- Exact amounts of mora and materials required per level and ascension.\n\n**12.$build- Check for recommended builds according to role. For Example- $buildxinyandps will give you the DPS build for Xinyan. The roles are either Support or DPS, Support usually by default contains the DPS Support build.**\n\n**The bot talks to you upon encountering some keywords, so be on the hunt :)**",
 		    color=0xC0C0C0)
-  	thumb = discord.File('Character_Ganyu_Portraitcropped.png')
+  	thumb = discord.File('amber.jpg')
   	embed.set_thumbnail(
-		    url='attachment://Character_Ganyu_Portraitcropped.png')
+		    url='attachment://amber.jpg')
   	await message.channel.send(embed=embed, file=thumb)
 
 keep_alive()
