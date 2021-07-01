@@ -862,7 +862,7 @@ async def on_message(message):
 		    value=
 		    "*In case set bonuses can't be achieved, focus on these stats on your artifacts !*\nAs usual, Crit Dmg, a little less crit rate since he gains some from ascension, and an ATk% or anemo dmg cup.",
 		    inline=False)
-  	thumb = discord.File('Character_xiao_Card.jpg')
+  	thumb = discord.File('Character_Xiao_Card.jpg')
   	embed.set_thumbnail(url='attachment://Character_Xiao_Card.jpg')
   	await message.channel.send(embed=embed, file=thumb)
 
@@ -872,7 +872,7 @@ async def on_message(message):
 		    description=
 		    "Take your business elsewhere.",
 		    color=0x98FB98)
-  	thumb = discord.File('Character_xiao_Card.jpg')
+  	thumb = discord.File('Character_Xiao_Card.jpg')
   	embed.set_thumbnail(url='attachment://Character_Xiao_Card.jpg')
   	await message.channel.send(embed=embed, file=thumb)
 
